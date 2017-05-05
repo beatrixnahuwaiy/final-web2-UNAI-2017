@@ -42,7 +42,7 @@
 				    	$("#button2").animate({
 				        "backgroundColor": colors[n]
 				      		}, 1000);
-						$('#button2').attr('href', 'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent( '"'+ r.content+'"'+ r.title));
+						$('#button2').attr('href', 'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent( '" '+ r.content+' " '+ ' - ' + r.title));
 	      				},
 	      				cache : false
       				})
