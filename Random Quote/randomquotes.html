@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+	<head>
+		<title> RANDOM QUOTES MACHINES</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="randomquotes.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+
+	<body>
+		<script src="jquery-3.2.0.min.js"></script>	
+		<script type="text/javascript" >
+			$(document).ready(function() {
+
+				$("#div4").hide();
+				$("#div5").hide();
+				
+				$("#button1").click(function(event){
+					
+					$.ajax({
+    					url: 'http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1',
+    					datatype: 'jsonp',
+      					success: function(data) {
+        				var r = data.shift(); // The data is an array of posts. Grab the first one.
+	      				var colors =['#16a085', '#27ae60',  '#f39c12', '#e74c3c', '#9b59b6', '#FB6964', '#342224', "#472E32", "#BDBB99", "#77B1A9", "#73A857"];
+	      				var n = Math.floor(Math.random() * colors.length);
+	      				currentQuote = r.content;
+	      				currentAuthor = r.title;
+						$("#judul").html(r.content);
+						$("#author").text(r.title);
+						$("#div3").css({"color":colors[n]});
+						$("#div4").css({"color":colors[n]});
+						$("#div5").css({"color":colors[n]});
+						$("#div7").css({"color":colors[n]});
+						$("html, body").animate({
+				        "backgroundColor": colors[n],
+				        "color": colors[n]
+				      		}, 1000);
+				    	$("#button1").animate({
+				        "backgroundColor": colors[n]
+				      		}, 1000);
+				    	$("#button2").animate({
+				        "backgroundColor": colors[n]
+				      		}, 1000);
+						$('#button2').attr('href', 'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent( '"'+ r.content+'"'+ r.title));
+	      				},
+	      				cache : false
+      				})
+      				$("#div4").show();
+					$("#div5").show();
+
+					$("#div3").animate({opacity: 0}, 500,
+						function() {
+          					$(this).animate({opacity: 1}, 500);
+					});
+
+					$("#div4").animate({opacity: 0}, 500,
+						function() {
+          					$(this).animate({opacity: 1}, 500);
+					});
+
+					$("#div5").animate({opacity: 0}, 500,
+						function() {
+						$(this).animate({opacity: 1}, 500);
+					});
+
+					$("#div7").animate({opacity: 0}, 500,
+						function() {
+						$(this).animate({opacity: 1}, 500);
+					});
+				});	
+			});
+		
+		</script>
+
+		<div id="div1" class="container">
+			<div id="div2" class="row">
+				<div id="div3" class="quotes">
+						<h1 > Random Quotes Machines </h1>
+				</div>
+
+				<div id="div4">
+						<i class="fa fa-quote-left"></i> 
+					<span id="judul"> Generate Quotes</span>
+						<i class="fa fa-quote-right" aria-hidden="true"></i> 
+				</div>
+
+				<div id ="div5" class="author">
+						<span> - </span>
+						<span id="author"></span>
+				</div>
+
+				<div id="div6">
+						<span>
+							<button id="button1" class="btn ">next quote <i class="fa fa-arrow-right"> </i></button>
+						</span>
+						<span>
+							<a id="button2" class="btn" title="Tweet this quote!" target="_blank">
+								<i class=" fa fa-twitter"></i>
+							</a>
+						</span>
+				</div>
+					
+				<div id="div7">
+						<span>Write and Coded by Beatrix Nahuwaiy   <i class="fa fa-user-o" aria-hidden="true"></i></span>
+				</div>
+			</div>
+		</div>
+
+		
+	</body>
+</html>
+
+ 	
