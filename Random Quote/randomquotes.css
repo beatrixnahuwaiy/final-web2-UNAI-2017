@@ -10,7 +10,9 @@ body{
 	width: 650px;
 	display: table;
 	position: relative;
-	
+	font-family: 'Inconsolata', monospace;
+	border-style: solid;
+	border-color: #FFF;
 }
 
 #div3{
@@ -27,7 +29,7 @@ body{
 	height: auto;
 	clear:both;
 	margin: 7% auto 7% auto ; 
-
+	font-family: 'Josefin Sans', sans-serif;
 }
 
 #div5{
@@ -36,6 +38,7 @@ body{
 	height: auto;
 	clear: both;
 	margin: 2% auto auto auto ; 
+	font-family: 'Josefin Sans', sans-serif;
 }
 
 #button1{
@@ -75,35 +78,3 @@ body{
 	text-align: center;
 }
 
-/*
-#div3{
-	background-color: #FFF;
-	width: 440px;
-	margin: 5% auto auto auto ; 
-	color:  #2c3e50; 
-	text-align: center;
-}
-
-#div4{
-	text-align: left;
-	width: 440px;
-	height: auto;
-	clear:both;
-	margin: 7% auto 7% auto ; 
-
-}
-
-#div5{
-	text-align: right;
-	width: 440px;
-	height: auto;
-	clear: both;
-	margin: 2% auto auto auto ; 
-}
-#div7{
-	background-color: #FFF; 
-	width: 440px;
-	margin: 7% auto 1% auto ; 
-	color:  #2c3e50;
-	text-align: center;
-} 
